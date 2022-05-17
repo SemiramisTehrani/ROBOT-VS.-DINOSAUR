@@ -5,8 +5,8 @@
 
 class Dinosaur : 
     def __init__(self, name , attack_power) : 
-       self.name = "name"                   # passed string
-       self.attack_power = "attack_power"   # passed integer or ?????
+       self.name = name                  # passed string
+       self.attack_power = attack_power   # passed integer or ?????
        self.health =  100                   # fix integer       
        
     
