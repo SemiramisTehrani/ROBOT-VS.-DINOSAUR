@@ -7,13 +7,17 @@
 
 # 05/16/2022 : rev.1  --> not done
 
-from dinosaur import Dinosaur
-from robot import Robot
+from fleet import Fleet
+from herd import Herd
+
+
+# watch the video session 
 
 class Battlefield :
     
-    def__init__(self):
-
+    def __init__(self):
+        self.herd = Herd()
+        self.fleet = Fleet()
 
 
     def run_game(self) :
