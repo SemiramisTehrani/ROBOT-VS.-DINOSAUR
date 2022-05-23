@@ -5,6 +5,9 @@
 # 05/18/2022 , rev3  : working on the weapon selection , energy levle stuff, added dinosaur health check --> matching dinosaur class done?
 # 5/20/2022 , rev 4 (101 session) : added random weapon list , moved dino health up
 # 5/20/2022 , rev 4 (101 session) : final version
+# 5/22/2022 , rev 5 : had to put back Weapon in the class , couldn't get it work until midnight.
+# 5/23/2022 , rev.6 : the main & battle are going through this class finally with no error
+# 5/23/2022 , rev.6 : final version 
 
 import random
 from weapon import Weapon
@@ -14,6 +17,7 @@ class Robot :
        self.name = name                  # passed string
        self.health = 100                 # fix integer
        self.power  = 150                 # fix integer for now
+       self.weapon = Weapon
        self.weapon_list = ["Laser", "Sonic" , "kinetic"] 
        
        # self.active_weapon = Weapon(random.choice(self.weapon_list), 10)  

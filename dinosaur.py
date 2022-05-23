@@ -5,6 +5,9 @@
 # 05/18/2022 , rev3 : added robot health check  ---> i think this one is done , making robot similar to this
 # 5/20 /2022 , rev 4 ( 101 session): no need having while , moving up robot health
 # 5/20 /2022 , rev 4 : final version
+# 5/23/2022 , rev.6 : the main & battle are going through this class finally with no error so far.
+# 5/23/2022 , rev.6 : final version 
+
 
 
 class Dinosaur : 

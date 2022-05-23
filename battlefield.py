@@ -6,9 +6,13 @@
 # ... method should lower the Dinosaur’s health by the attack_power of the Robot’s active_weapon. 
 
 # 05/16/2022 : rev.1  --> not done
-# 05/20/2022  rev2 : (afetr 101) : only importing fleet & herd 
+# 05/20/2022  rev2 : (afetr 101) : only importing fleet & herd ---> doesn't work this way
 
 # 5/21/2022 rev.3 : work in progress 
+# 5/22/2022 rev.4 : had to import robot and dinosaur classes here because couldn't fix the error. 
+# 5/23/2022 rev.5 : still needs some print refienments & figure out why I had to added robot & dinosaur classes here. 
+# 5/23/2022 rev.5 : runs with no error 
+# reference : Googleing , github 
 
 
 import random
@@ -63,7 +67,7 @@ Dinosaur is in Herd group.
             )
 
     def choose_team(self):
-        choose_team = int(input('Choose your team: (1) Robots; (2) Dinosaurs'))
+        choose_team = int(input("*** Choose your team: (1) Robots; (2) Dinosaurs***"))
         if choose_team == 1:
             print("*** You chose the fleet of Robots ***")
             return choose_team
@@ -79,10 +83,10 @@ Dinosaur is in Herd group.
     def battle(self):
         first_turn = random.randint(1, 2)
         if first_turn == 1:
-            print('Robots are  first')
+            print("*** Robots are here ***")
             first_turn = 1
         if first_turn == 2:
-            print('Dinosaurs are first')
+            print("*** Dinosaurs are here ***")
             first_turn = 2
 
 
@@ -93,10 +97,10 @@ Dinosaur is in Herd group.
                         self.robo_turn()  # First turn team
 
                         if self.herd.dinosaurs[0].health <= 0:
-                            print(f'{self.herd.dinosaurs[0].type} is out.')
+                            print(f"{self.herd.dinosaurs[0].type} is dead.")
                             self.herd.dinosaurs.remove(self.herd.dinosaurs[0])
                         elif self.fleet.robots[0].health <= 0:
-                            print(f'{self.fleet.robots[0].name} is out.')
+                            print(f"{self.fleet.robots[0].name} is dead.")
                             self.fleet.robots.remove(self.fleet.robots[0])
 
                         if len(self.fleet.robots) == 0:
@@ -109,10 +113,10 @@ Dinosaur is in Herd group.
                         self.dino_turn()  # Second turn team
 
                         if self.herd.dinosaurs[0].health <= 0:
-                            print(f'{self.herd.dinosaurs[0].type} is out.')
+                            print(f"{self.herd.dinosaurs[0].type} is dead.")
                             self.herd.dinosaurs.remove(self.herd.dinosaurs[0])
                         elif self.fleet.robots[0].health <= 0:
-                            print(f'{self.fleet.robots[0].name} is out.')
+                            print(f"{self.fleet.robots[0].name} is dead.")
                             self.fleet.robots.remove(self.fleet.robots[0])
 
                         if len(self.fleet.robots) == 0:
@@ -130,10 +134,10 @@ Dinosaur is in Herd group.
                         self.dino_turn()  # First turn team
 
                         if self.herd.dinosaurs[0].health <= 0:
-                            print(f'{self.herd.dinosaurs[0].type} is out.')
+                            print(f"{self.herd.dinosaurs[0].type} is dead.")
                             self.herd.dinosaurs.remove(self.herd.dinosaurs[0])
                         elif self.fleet.robots[0].health <= 0:
-                            print(f'{self.fleet.robots[0].name} is out.')
+                            print(f"{self.fleet.robots[0].name} is dead.")
                             self.fleet.robots.remove(self.fleet.robots[0])
 
                         if len(self.fleet.robots) == 0:
@@ -146,10 +150,10 @@ Dinosaur is in Herd group.
                         self.robo_turn()  # Second turn team
 
                         if self.herd.dinosaurs[0].health <= 0:
-                            print(f'{self.herd.dinosaurs[0].type} is out.')
+                            print(f"{self.herd.dinosaurs[0].type} is dead.")
                             self.herd.dinosaurs.remove(self.herd.dinosaurs[0])
                         elif self.fleet.robots[0].health <= 0:
-                            print(f'{self.fleet.robots[0].name} is out.')
+                            print(f"{self.fleet.robots[0].name} is dead.")
                             self.fleet.robots.remove(self.fleet.robots[0])
 
                         if len(self.fleet.robots) == 0:
@@ -166,6 +170,7 @@ Dinosaur is in Herd group.
 
     def robo_turn(self):
         self.show_robo_opponent_options()
+        # print(" Here are Robots opponent list")
         self.fleet.robots[0].attack_dinosaur(self.herd.dinosaurs[0])
         # self.Robot.active_weapon.attack_dinosaur(self.herd.dinosaurs[0])
  
@@ -174,30 +179,28 @@ Dinosaur is in Herd group.
     def show_dino_opponent_options(self):
         i = 1
         for element in self.fleet.robots:
-            print(f'{element.name} has {element.health} health.')
+            print(f"{element.name} has {element.health} health.")
             i = i + 1
 
 
     def show_robo_opponent_options(self):
         i = 1
         for element in self.herd.dinosaurs:
-            print(f'{element.name} has {element.health} health.')
+            print(f"{element.name} has {element.health} health.")
             i = i + 1
     
     def display_winners_robots(self):
-        # print('Beep Boop! The Robot fleet has defeated the herd of Dinosaurs win.')
 
         if self.team == 1:
-            print("Beep Boop! The Robot fleet has defeated the herd of Dinosaurs win. You win!")
+            print("**** winner ! The Robot fleet defeated the herd of Dinosaurs ****")
         if self.team == 2:
-            print("Beep Boop! The Robot fleet has defeated the herd of Dinosaurs win. You lose.")
-        # print('Test - Robots win. Display winner message not working')
+            print("**** loser ! The Robot fleet has defeated the herd of Dinosaurs ****")
+        
 
 
     def display_winners_dinosaurs(self):
-        # print('Rawr! The herd of Dinosaurs has defeated the fleet of Robots.')
 
         if self.team == 2:
-            print("Rawr! The herd of Dinosaurs has defeated the fleet of Robots. You win!")
+            print("**** winner! The herd of Dinosaurs has defeated the fleet of Robots.****")
         if self.team == 1:
-            print("Rawr! The herd of Dinosaurs has defeated the fleet of Robots. You lose.")
+            print("**** loser! The herd of Dinosaurs has defeated the fleet of Robots.****")
