@@ -11,6 +11,7 @@
 
 
 from robot import Robot
+from weapon import Weapon
 
 
 
@@ -21,13 +22,13 @@ class Fleet :
         pass
 
     def fleet_of_robots(self):
-        # weapon1 = Weapon("Pulse Gun", 8)
-        # weapon2 = Weapon("Sonic gun", 15)
-        # weapon3 = Weapon("Laser Gun", 50)
+        weapon1 = Weapon("Pulse Gun", 8)
+        weapon2 = Weapon("Sonic gun", 15)
+        weapon3 = Weapon("Laser Gun", 50)
 
-        robot1 = Robot("Rosy")
-        robot2 = Robot("Angie")
-        robot3 = Robot("Pinky")
+        robot1 = Robot("Rosy", weapon1)
+        robot2 = Robot("Angie", weapon2)
+        robot3 = Robot("Pinky",  weapon3)
 
         self.robots.append(robot1)
         self.robots.append(robot2)

@@ -10,17 +10,17 @@ import random
 from weapon import Weapon
 
 class Robot : 
-    def __init__(self , name) : 
+    def __init__(self , name, Weapon) : 
        self.name = name                  # passed string
        self.health = 100                 # fix integer
-       self.power  = 150                   # fix integer for now
+       self.power  = 150                 # fix integer for now
        self.weapon_list = ["Laser", "Sonic" , "kinetic"] 
        
-       self.active_weapon = Weapon(random.choice(self.weapon_list), 10)  
+       # self.active_weapon = Weapon(random.choice(self.weapon_list), 10)  
 
        pass
        
-    def weapon_dinosaur(self, dinosaur) : 
+    def attack_dinosaur(self, dinosaur) : 
 
         if dinosaur.health <= 0 :
                  print(f"\n{dinosaur.name} has been destroyed , end of game")
@@ -28,22 +28,22 @@ class Robot :
         if self.power > 10 :
             while True :
 
-                weapon_selection = int(input(f" select option :  1 {self.weapon_list(0)} , 2 {self.weapon_list(1)} , 2 {self.weapon_list(3)}"))
+                weapon_selection = int(input(f" select option :  1 {self.weapon_list[0]} , 2 {self.weapon_list[1]} , 3 {self.weapon_list[2]}."))
 
                 if weapon_selection == 1 : 
-                    print(f'{self.weapon_list} attacked {dinosaur.name} with {self.weapon_list[0]}')
+                    print(f'{self.name} attacked {dinosaur.name} with {self.weapon_list[0]}')
                     break
                 
                 elif weapon_selection == 2 :
-                    print(f'{self.weapon_list} attacked {dinosaur.name} with {self.weapon_list[1]}')
+                    print(f'{self.name} attacked {dinosaur.name} with {self.weapon_list[1]}')
                     break
                 
                 elif weapon_selection == 3 :
-                    print(f'{self.weapon_list} attacked {dinosaur.name} with {self.weapon_list[2]}')
+                    print(f'{self.name} attacked {dinosaur.name} with {self.weapon_list[2]}')
                     break
 
             self.power  = self.power - 10
-            dinosaur.health = dinosaur.health - self.weapon_power
+            dinosaur.health = dinosaur.health - self.weapon.attack_power
             print(f'{self.name} power is now {self.power}')
             print(f'{dinosaur.name} health is now {dinosaur.health}')
             

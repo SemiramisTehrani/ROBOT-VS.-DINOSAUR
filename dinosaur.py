@@ -36,18 +36,18 @@ class Dinosaur :
 
         if self.energy > 10 :
             
-                attack_selection = int(input(f" select option :  1 {self.attack_list(0)} , 2 {self.attack_list(1)} , 2 {self.attack_list(3)}"))
+                attack_selection = int(input(f" select option :  1 {self.attack_list[0]} , 2 {self.attack_list[1]} , 3 {self.attack_list[2]}."))
 
                 if attack_selection == 1 : 
-                    print(f'{self.attack_list} attacked {robot.name} with {self.attack_list[0]}')
+                    print(f'{self.name} attacked {robot.name} with {self.attack_list[0]}')
                     
                 
                 elif attack_selection == 2 :
-                    print(f'{self.attack_list} attacked {robot.name} with {self.attack_list[1]}')
+                    print(f'{self.name} attacked {robot.name} with {self.attack_list[1]}')
                    
                 
                 elif attack_selection == 3 :
-                    print(f'{self.attack_list} attacked {robot.name} with {self.attack_list[2]}')
+                    print(f'{self.name} attacked {robot.name} with {self.attack_list[2]}')
                     
 
 
