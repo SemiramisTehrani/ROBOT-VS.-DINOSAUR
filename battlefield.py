@@ -14,6 +14,8 @@
 # 5/23/2022 rev.5 : runs with no error 
 # reference : Googleing , github 
 
+# 5/31/2022 : fixed typos and mismatchied variable names. 
+
 
 import random
 import robot
@@ -38,11 +40,7 @@ class Battlefield :                         # class is the whole book , methods 
      self.team = self.choose_team()              # Choosing a team --> done
      self.battle()                               # battle
      
-     
-     
      self.ending()
-     # print("The game is afoot!")
-     pass
 
     # greetings : cool way to print in the console (office hours video)
     def display_greeting(self) :
@@ -97,7 +95,7 @@ Dinosaur is in Herd group.
                         self.robo_turn()  # First turn team
 
                         if self.herd.dinosaurs[0].health <= 0:
-                            print(f"{self.herd.dinosaurs[0].type} is dead.")
+                            print(f"{self.herd.dinosaurs[0].name} is dead.")
                             self.herd.dinosaurs.remove(self.herd.dinosaurs[0])
                         elif self.fleet.robots[0].health <= 0:
                             print(f"{self.fleet.robots[0].name} is dead.")
@@ -113,7 +111,7 @@ Dinosaur is in Herd group.
                         self.dino_turn()  # Second turn team
 
                         if self.herd.dinosaurs[0].health <= 0:
-                            print(f"{self.herd.dinosaurs[0].type} is dead.")
+                            print(f"{self.herd.dinosaurs[0].name} is dead.")
                             self.herd.dinosaurs.remove(self.herd.dinosaurs[0])
                         elif self.fleet.robots[0].health <= 0:
                             print(f"{self.fleet.robots[0].name} is dead.")
@@ -134,7 +132,7 @@ Dinosaur is in Herd group.
                         self.dino_turn()  # First turn team
 
                         if self.herd.dinosaurs[0].health <= 0:
-                            print(f"{self.herd.dinosaurs[0].type} is dead.")
+                            print(f"{self.herd.dinosaurs[0].name} is dead.")
                             self.herd.dinosaurs.remove(self.herd.dinosaurs[0])
                         elif self.fleet.robots[0].health <= 0:
                             print(f"{self.fleet.robots[0].name} is dead.")
@@ -150,7 +148,7 @@ Dinosaur is in Herd group.
                         self.robo_turn()  # Second turn team
 
                         if self.herd.dinosaurs[0].health <= 0:
-                            print(f"{self.herd.dinosaurs[0].type} is dead.")
+                            print(f"{self.herd.dinosaurs[0].name} is dead.")
                             self.herd.dinosaurs.remove(self.herd.dinosaurs[0])
                         elif self.fleet.robots[0].health <= 0:
                             print(f"{self.fleet.robots[0].name} is dead.")
@@ -204,3 +202,6 @@ Dinosaur is in Herd group.
             print("**** winner! The herd of Dinosaurs has defeated the fleet of Robots.****")
         if self.team == 1:
             print("**** loser! The herd of Dinosaurs has defeated the fleet of Robots.****")
+
+    def ending(self) :
+        print ("*** Game is over ***")
